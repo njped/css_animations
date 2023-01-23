@@ -1,0 +1,202 @@
+/* Animations on the index.html file */
+
+@keyframes colorChange {
+    from {background-color: grey;}
+    to {background-color: red;}
+}
+
+@keyframes multiColChange {
+    0% {background-color: grey;}
+    10% {background-color: black;}
+    20% {background-color: brown;}
+    30% {background-color: purple;}
+    40% {background-color: indigo;}
+    50% {background-color: blue;}
+    60% {background-color: green;}
+    70% {background-color: greenyellow;}
+    80% {background-color: yellow;}
+    90% {background-color: orange;}
+    100% {background-color: red;}
+}
+
+@keyframes movement {
+    0% {
+        background-color: grey;
+        left: 0px;
+        top: 0px
+    }
+
+    10% {
+        background-color: black;
+        left: 100px;
+        top: 0px
+    }
+    20% {
+        background-color: brown;
+        left: 200px;
+        top: 0px;
+    }
+    30% {
+        background-color: purple;
+        left: 200px;
+        top: 100px;
+    }
+    40% {
+        background-color: indigo;
+        left: 200px;
+        top: 200px;
+    }
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    60% {
+        background-color: green;
+        left: 150px;
+        top: 200px;
+    }
+    70% {
+        background-color: greenyellow;
+        left: 100px;
+        top: 200px
+    }
+    80% {
+        background-color: yellow;
+        left:0px;
+        top: 100px;
+    }
+    90% {
+        background-color: orange;
+        left: 0px;
+        top: 100px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.animation {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    background-color: grey;
+    position: relative;
+}
+
+.animation:nth-child(1) {
+    animation-name: colorChange;
+    animation-duration: 5s;
+}
+
+.animation:nth-child(2) {
+    animation-name: multiColChange;
+    animation-duration: 5s;
+}
+
+.animation:nth-child(3) {
+    animation-name: movement;
+    animation-duration: 5s;
+}
+
+.animation:nth-child(4){
+    animation-name: movement;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.animation:nth-child(5) {
+    animation: movement 5s infinite alternate linear;
+    animation-delay: 1s;
+}
+
+
+
+
+
+/* Used transitions on the nav bar but I need to learn more about the ::after attribute */
+
+nav {
+    background-color: rgb(69, 69, 69);
+    display: flex;
+}
+
+a {
+    display: block;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    text-decoration: none;
+    position: relative;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background: transparent;
+    transition: all 300ms;
+}
+
+a:hover::after {
+    width: 40%;
+    left: 30%;
+    background: white;
+}
+
+a:hover {
+    background-color: black;
+}
+
+
+
+
+
+/* Transforming on the transform.html */
+
+@keyframes spin {
+    100% {
+        transform: rotate(360d);
+    }
+}
+
+i {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s infinite linear;
+}
+
+
+
+
+/* Boxes with some transitions on transition.html */
+
+.transition {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    margin: 25px;
+    transition: background-color 1s, width 300ms;
+}
+
+.transition:hover {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+}
